@@ -1,0 +1,24 @@
+{
+  "name": "webapp-express",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --env-file=.env --watch app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuele301197/webapp-express.git"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samuele301197/webapp-express/issues"
+  },
+  "homepage": "https://github.com/samuele301197/webapp-express#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql2": "^3.14.1"
+  }
+}
