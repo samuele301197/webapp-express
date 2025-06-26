@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
     });
 });
 
-app.get("/movies", moviesRouter);
+app.use("/movies", moviesRouter);
 
 app.listen(port, () => {
     console.log( `App in ascolto nella porta ${port}`);   
