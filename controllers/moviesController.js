@@ -15,7 +15,12 @@ const index = (req, res) => {
 
 const show = (req, res) => {
     const id = req.params.id;
-    const movieSql = "SELECT * FROM movies WHERE id = ?;";
+    const movieSql =
+    `select *
+    from movies
+    inner join reviews 
+    on reviews.movie_id = movies.id 
+    where movies.id = ?;`;
 
     connection.query(movieSql, [id], (err, results) => {
         if(err) {
