@@ -1,8 +1,17 @@
 import express from "express";
 import moviesRouter from "./routes/movies.js";
 import connection from "./db.js";
+import cors from "cors";
+
+
 const app = express();
 const port = process.env.SERVER_PORT;
+
+app.use(cors ({
+    origin: process.env.FE_URL,
+})
+);
+
 
 app.use(express.static("public"));
 app.use(express.json());
