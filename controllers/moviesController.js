@@ -6,8 +6,16 @@ const index = (req, res) => {
         if(err) {
             console.log(err);       
         } else {
+
+            const movies = results.map(movie => {
+                return {
+                    ...movie,
+                    image: 'http://localhost:3200/img/' + movie.image
+                }
+            });
+
             res.json({
-            data: results,
+                data: movies,
             });
         };
     });
@@ -32,11 +40,15 @@ const show = (req, res) => {
                 error: "Movie non trovato",
             });
         } else {
+            const movies = results.map(movie => {
+                return {
+                    ...movie,
+                    image: 'http://localhost:3200/img/' + movie.image
+                }
+            });
             res.json({
             data: {
                 ...results[0],
-                image: curMovie.image ? `${req.imagePath}/${movieData.image}` : null,
-                reviews: reviewsResults,
             },
             });
         }
