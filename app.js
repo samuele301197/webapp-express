@@ -13,7 +13,7 @@ app.use(cors ({
 );
 
 
-app.use(express.static("public"));
+app.use('/img', express.static('public/img'));
 app.use(express.json());
 
 app.get("/", (req, res) => {
